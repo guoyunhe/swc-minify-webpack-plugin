@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "strict": true,
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "lib": ["esnext"],
+    "types": ["node"],
+    "outDir": "lib",
+    "declaration": true
+  },
+  "include": ["src/*.ts"]
+}
