@@ -1,0 +1,26 @@
+{
+  "name": "swc-minifier-webpack-plugin",
+  "version": "1.0.0",
+  "description": "faster webpack minification plugin",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/guoyunhe/swc-minifier-webpack-plugin.git"
+  },
+  "keywords": [
+    "webpack",
+    "plugin",
+    "minify",
+    "optimization",
+    "swc"
+  ],
+  "author": "Guo Yunhe",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/guoyunhe/swc-minifier-webpack-plugin/issues"
+  },
+  "homepage": "https://github.com/guoyunhe/swc-minifier-webpack-plugin#readme"
+}
