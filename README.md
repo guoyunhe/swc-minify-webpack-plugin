@@ -8,7 +8,7 @@ This plugin is forked from [swc-webpack-plugin](https://github.com/ice-lab/swc-w
 - Use `swc.minify()` instead of `swc.transform()`, for better performance
 - enable `mangle` by default for better compression rate
 
-This plugin is faster than [terser-webpack-plugin's swc mode](https://webpack.js.org/plugins/terser-webpack-plugin/#swc). However, it is slower than [esbuild]
+This plugin is faster than [terser-webpack-plugin's swc mode](https://webpack.js.org/plugins/terser-webpack-plugin/#swc).
 
 ## Install
 
