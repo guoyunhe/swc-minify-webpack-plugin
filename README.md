@@ -1,6 +1,6 @@
 # SwcMinifyWebpackPlugin
 
-faster than terser, slower than esbuild
+Faster minimizer plugin for webpack based on `swc.minify()`.
 
 This plugin is forked from [swc-webpack-plugin](https://github.com/ice-lab/swc-webpack-plugin), with following differences:
 
