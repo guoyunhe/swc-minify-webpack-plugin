@@ -4,19 +4,13 @@ specifiers:
   '@swc/core': ^1.2.160
   '@types/node': ^17.0.22
   '@types/webpack': ^5.28.0
-  '@types/webpack-sources': ^3.2.0
   typescript: ^4.6.2
   webpack: ^5.70.0
-  webpack-sources: ^3.2.3
-
-dependencies:
-  webpack-sources: 3.2.3
 
 devDependencies:
   '@swc/core': 1.2.160
   '@types/node': 17.0.22
   '@types/webpack': 5.28.0_@swc+core@1.2.160
-  '@types/webpack-sources': 3.2.0
   typescript: 4.6.2
   webpack: 5.70.0_@swc+core@1.2.160
 
@@ -183,18 +177,6 @@ packages:
 
   /@types/node/17.0.22:
     resolution: {integrity: sha512-8FwbVoG4fy+ykY86XCAclKZDORttqE5/s7dyWZKLXTdv3vRy5HozBEinG5IqhvPXXzIZEcTVbuHlQEI6iuwcmw==}
-    dev: true
-
-  /@types/source-list-map/0.1.2:
-    resolution: {integrity: sha512-K5K+yml8LTo9bWJI/rECfIPrGgxdpeNbj+d53lwN4QjW1MCwlkhUms+gtdzigTeUyBr09+u8BwOIY3MXvHdcsA==}
-    dev: true
-
-  /@types/webpack-sources/3.2.0:
-    resolution: {integrity: sha512-Ft7YH3lEVRQ6ls8k4Ff1oB4jN6oy/XmU6tQISKdhfh+1mR+viZFphS6WL0IrtDOzvefmJg5a0s7ZQoRXwqTEFg==}
-    dependencies:
-      '@types/node': 17.0.22
-      '@types/source-list-map': 0.1.2
-      source-map: 0.7.3
     dev: true
 
   /@types/webpack/5.28.0_@swc+core@1.2.160:
@@ -624,6 +606,7 @@ packages:
   /webpack-sources/3.2.3:
     resolution: {integrity: sha512-/DyMEOrDgLKKIG0fmvtz+4dUX/3Ghozwgm6iPp8KRhvn+eQf9+Q7GWxVNMk3+uCPWfdXYC4ExGBckIXdFEfH1w==}
     engines: {node: '>=10.13.0'}
+    dev: true
 
   /webpack/5.70.0_@swc+core@1.2.160:
     resolution: {integrity: sha512-ZMWWy8CeuTTjCxbeaQI21xSswseF2oNOwc70QSKNePvmxE7XW36i7vpBMYZFAUHPwQiEbNGCEYIOOlyRbdGmxw==}
