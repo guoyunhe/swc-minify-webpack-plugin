@@ -6,7 +6,7 @@ const { RawSource, SourceMapSource } = webpack.sources;
 
 const isJsFile = /\.[cm]?js(\?.*)?$/i;
 
-export default class SwcMinifyWebpackPlugin {
+module.exports = class SwcMinifyWebpackPlugin {
   private readonly options: JsMinifyOptions = {
     compress: true,
     mangle: true,
@@ -104,4 +104,4 @@ export default class SwcMinifyWebpackPlugin {
       })
     );
   }
-}
+};
