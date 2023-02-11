@@ -1,14 +1,14 @@
 {
+  "extends": "@tsconfig/node16/tsconfig.json",
   "compilerOptions": {
-    "esModuleInterop": true,
-    "strict": true,
-    "target": "es5",
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "lib": ["esnext"],
-    "types": ["node"],
-    "outDir": "lib",
-    "declaration": true
+    "resolveJsonModule": true,
+    "types": [
+      "node",
+      "jest",
+      "@guoyunhe/node-scripts/global"
+    ]
   },
-  "include": ["src/*.ts"]
+  "include": [
+    "src"
+  ]
 }

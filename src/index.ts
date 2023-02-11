@@ -1,7 +1,6 @@
 import { JsMinifyOptions, minify } from '@swc/core';
 import webpack from 'webpack';
 
-const { name, version } = require('../package.json');
 const { RawSource, SourceMapSource } = webpack.sources;
 
 const isJsFile = /\.[cm]?js(\?.*)?$/i;
@@ -20,20 +19,17 @@ class SwcMinifyWebpackPlugin {
     const pluginName = this.constructor.name;
     const meta = JSON.stringify({
       name: pluginName,
-      version,
+      version: PACKAGE_VERSION,
       options: this.options,
     });
 
     compiler.hooks.compilation.tap(pluginName, (compilation) => {
-      compilation.hooks.chunkHash.tap(pluginName, (_, hash) =>
-        hash.update(meta)
-      );
+      compilation.hooks.chunkHash.tap(pluginName, (_, hash) => hash.update(meta));
 
       compilation.hooks.processAssets.tapPromise(
         {
           name: pluginName,
-          stage: (compilation.constructor as any)
-            .PROCESS_ASSETS_STAGE_OPTIMIZE_SIZE,
+          stage: (compilation.constructor as any).PROCESS_ASSETS_STAGE_OPTIMIZE_SIZE,
           additionalAssets: true,
         },
         () => this.transformAssets(compilation)
@@ -42,7 +38,7 @@ class SwcMinifyWebpackPlugin {
       compilation.hooks.statsPrinter.tap(pluginName, (stats) => {
         stats.hooks.print
           .for('asset.info.minimized')
-          .tap(name, (minimized, { green, formatFlag }) => {
+          .tap(PACKAGE_NAME || '', (minimized, { green, formatFlag }) => {
             if (minimized) {
               if (green && formatFlag) {
                 return green(formatFlag('minimized'));
@@ -104,5 +100,5 @@ class SwcMinifyWebpackPlugin {
       })
     );
   }
-};
-export = SwcMinifyWebpackPlugin
+}
+export = SwcMinifyWebpackPlugin;
