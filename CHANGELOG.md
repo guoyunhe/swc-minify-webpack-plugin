@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.0 - 2023-02-12
+
+- **BREAKING CHANGE**: Changed default export to named export
+
 ## 1.1.1 - 2023-02-11
 
 - Fixed readme

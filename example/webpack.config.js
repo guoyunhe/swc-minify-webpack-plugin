@@ -1,4 +1,4 @@
-const SwcMinifyWebpackPlugin = require('../dist');
+const { SwcMinifyWebpackPlugin } = require('../dist');
 
 module.exports = {
   mode: 'production',

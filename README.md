@@ -22,7 +22,7 @@ Recommended configuration:
 
 ```js
 // webpack.config.js
-const SwcMinifyWebpackPlugin = require('swc-minify-webpack-plugin');
+const { SwcMinifyWebpackPlugin } = require('swc-minify-webpack-plugin');
 
 module.exports = {
   optimization: {
@@ -36,7 +36,7 @@ Custom configuration:
 
 ```js
 // webpack.config.js
-const SwcMinifyWebpackPlugin = require('swc-minify-webpack-plugin');
+const { SwcMinifyWebpackPlugin } = require('swc-minify-webpack-plugin');
 
 module.exports = {
   optimization: {
