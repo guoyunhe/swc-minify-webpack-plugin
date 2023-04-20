@@ -82,11 +82,11 @@ export class SwcMinifyWebpackPlugin {
           sourceMap,
         });
 
-        const newSource = sourceMap
+        const newSource = sourceMap && result.map
           ? new SourceMapSource(
               result.code,
               asset.name,
-              result.map as any,
+              result.map,
               sourceAsString,
               map as any,
               true
