@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.1 - 2023-04-20
+
+- Fix source maps of empty assets [#4](https://github.com/guoyunhe/swc-minify-webpack-plugin/pull/4) by [@danieldiekmeier](https://github.com/danieldiekmeier)
+
 ## 2.0.0 - 2023-02-12
 
 - **BREAKING CHANGE**: Changed default export to named export
