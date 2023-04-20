@@ -1,6 +1,6 @@
 {
   "name": "swc-minify-webpack-plugin",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A faster minimizer for webpack based on swc.minify()",
   "keywords": [
     "webpack",
