@@ -2,11 +2,11 @@
 
 ## 2.1.0 - 2023-04-26
 
-- Change license to Apache 2.0
+- Changed license to Apache 2.0
 
 ## 2.0.1 - 2023-04-20
 
-- Fix source maps of empty assets [#4](https://github.com/guoyunhe/swc-minify-webpack-plugin/pull/4) by [@danieldiekmeier](https://github.com/danieldiekmeier)
+- Fixed source maps of empty assets [#4](https://github.com/guoyunhe/swc-minify-webpack-plugin/pull/4) by [@danieldiekmeier](https://github.com/danieldiekmeier)
 
 ## 2.0.0 - 2023-02-12
 
