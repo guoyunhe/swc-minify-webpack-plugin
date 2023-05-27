@@ -68,3 +68,9 @@ Type: `boolean | object`
 Default: `true`
 
 See <https://swc.rs/docs/configuration/minification#jscminifymangle>
+
+### `format`
+
+Type: `object`
+
+See <https://swc.rs/docs/configuration/minification#jscminifyformat>

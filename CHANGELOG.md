@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.1 - 2023-05-27
+
+- Updated README to mention `format` option
+
 ## 2.1.0 - 2023-04-26
 
 - Changed license to Apache 2.0
