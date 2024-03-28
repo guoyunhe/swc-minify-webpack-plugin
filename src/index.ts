@@ -29,10 +29,10 @@ export class SwcMinifyWebpackPlugin {
       compilation.hooks.processAssets.tapPromise(
         {
           name: pluginName,
-          stage: (compilation.constructor as any).PROCESS_ASSETS_STAGE_OPTIMIZE_SIZE,
+          stage: compiler.webpack.Compilation.PROCESS_ASSETS_STAGE_OPTIMIZE_SIZE,
           additionalAssets: true,
         },
-        () => this.transformAssets(compilation)
+        () => this.optimize(compiler, compilation)
       );
 
       compilation.hooks.statsPrinter.tap(pluginName, (stats) => {
@@ -53,10 +53,10 @@ export class SwcMinifyWebpackPlugin {
     });
   }
 
-  private transformAssets(compilation: webpack.Compilation) {
+  private optimize(compiler: webpack.Compiler, compilation: webpack.Compilation) {
     const {
       options: { devtool },
-    } = compilation.compiler;
+    } = compiler;
     const sourceMap =
       this.options.sourceMap === undefined
         ? !!devtool && devtool.includes('source-map')
@@ -76,27 +76,27 @@ export class SwcMinifyWebpackPlugin {
     await Promise.all(
       assets.map(async (asset) => {
         const { source, map } = asset.source.sourceAndMap();
-        const sourceAsString = source.toString();
-        const result = await minify(sourceAsString, {
+
+        const output = await minify(source as string, {
           ...this.options,
           sourceMap,
         });
 
-        const newSource = sourceMap && result.map
-          ? new SourceMapSource(
-              result.code,
-              asset.name,
-              result.map,
-              sourceAsString,
-              map as any,
-              true
-            )
-          : new RawSource(result.code);
+        let newMap;
 
-        compilation.updateAsset(asset.name, newSource, {
-          ...asset.info,
-          minimized: true,
-        });
+        if (output.map) {
+          newMap = JSON.parse(output.map);
+          newMap.sources = [asset.name];
+        }
+
+        const newSource =
+          sourceMap && newMap
+            ? new SourceMapSource(output.code, asset.name, newMap, source, map, true)
+            : new RawSource(output.code);
+
+        const newInfo = { ...asset.info, minimized: true };
+
+        compilation.updateAsset(asset.name, newSource, newInfo);
       })
     );
   }

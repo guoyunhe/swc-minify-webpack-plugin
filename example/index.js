@@ -1,3 +1,2 @@
-import * as three from 'three.js';
-
-console.log('three');
+import './bar.ts';
+import './foo.ts';

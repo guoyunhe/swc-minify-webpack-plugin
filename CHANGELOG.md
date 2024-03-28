@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.2 - 2024-03-28
+
+- Fixed broken source maps
+
 ## 2.1.1 - 2023-05-27
 
 - Updated README to mention `format` option

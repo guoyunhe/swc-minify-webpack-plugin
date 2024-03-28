@@ -43,7 +43,9 @@
     "format": "node-scripts format",
     "lint": "node-scripts lint",
     "test": "node-scripts test",
-    "watch": "node-scripts watch"
+    "watch": "node-scripts watch",
+    "example:build": "cd example && webpack",
+    "example:serve": "serve example/dist"
   },
   "prettier": {
     "printWidth": 100,
@@ -62,6 +64,10 @@
     "@types/jest": "^29.5.12",
     "@types/node": "^20.11.30",
     "@types/webpack": "^5.28.5",
+    "html-webpack-plugin": "^5.6.0",
+    "serve": "^14.2.1",
+    "swc-loader": "^0.2.6",
+    "terser-webpack-plugin": "^5.3.10",
     "three.js": "^0.77.1",
     "typescript": "^5.4.3",
     "webpack": "^5.91.0",
