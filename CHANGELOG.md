@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.3 - 2024-08-22
+
+- Fixed Buffer data handling
+
 ## 2.1.2 - 2024-03-28
 
 - Fixed broken source maps
