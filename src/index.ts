@@ -32,7 +32,7 @@ export class SwcMinifyWebpackPlugin {
           stage: compiler.webpack.Compilation.PROCESS_ASSETS_STAGE_OPTIMIZE_SIZE,
           additionalAssets: true,
         },
-        () => this.optimize(compiler, compilation)
+        () => this.optimize(compiler, compilation),
       );
 
       compilation.hooks.statsPrinter.tap(pluginName, (stats) => {
@@ -71,13 +71,13 @@ export class SwcMinifyWebpackPlugin {
   private async processAssets(
     assets: webpack.Asset[],
     sourceMap: boolean,
-    compilation: webpack.Compilation
+    compilation: webpack.Compilation,
   ) {
     await Promise.all(
       assets.map(async (asset) => {
         const { source, map } = asset.source.sourceAndMap();
 
-        const output = await minify(source as string, {
+        const output = await minify(Buffer.isBuffer(source) ? source.toString() : source, {
           ...this.options,
           sourceMap,
         });
@@ -97,7 +97,7 @@ export class SwcMinifyWebpackPlugin {
         const newInfo = { ...asset.info, minimized: true };
 
         compilation.updateAsset(asset.name, newSource, newInfo);
-      })
+      }),
     );
   }
 }
